@@ -2,14 +2,14 @@ export const siteConfig = {
   //   name: 'Hizkiel',
   url: 'https://habte.netlify.app',
   links: {
-    linkedin: 'https://www.linkedin.com/in/hizkiel/',
-    upwork: 'https://www.upwork.com/freelancers/~019c245be719a63f38',
-    pinterest: 'https://www.pinterest.com/hhiizzkkiieell',
-    instagram: 'https://instagram.com/hizkiel_worku?igshid=OGQ5ZDc2ODk2ZA==',
-    telegram: 'https://t.me/@hhiizzkkiieell',
-    whatsapp: 'https://wa.me/qr/UFFEHUJI4V4LN1',
     phone_number: '0989845857',
+    telegram: 'https://t.me/@hhiizzkkiieell',
     email: 'hizkielworku70@gmail.com',
+    instagram: 'https://instagram.com/hizkiel_worku?igshid=OGQ5ZDc2ODk2ZA==',
+    upwork: 'https://www.upwork.com/freelancers/~019c245be719a63f38',
+    whatsapp: 'https://wa.me/qr/UFFEHUJI4V4LN1',
+    pinterest: 'https://www.pinterest.com/hhiizzkkiieell',
+    linkedin: 'https://www.linkedin.com/in/hizkiel/',
   },
 };
 

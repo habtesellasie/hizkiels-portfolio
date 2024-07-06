@@ -1,5 +1,6 @@
 import { Poppins, Karla } from 'next/font/google';
 import './globals.css';
+import ThemeSwitcher from './components/ThemeSwitcher';
 
 const karla = Karla({ subsets: ['latin'] });
 
@@ -22,7 +23,10 @@ export default function RootLayout({ children }) {
       lang='en'
       className='bg-white text-black dark:bg-black dark:text-white'
     >
-      <body className={karla.className}>{children}</body>
+      <body className={karla.className}>
+        {/* <ThemeSwitcher /> */}
+        {children}
+      </body>
     </html>
   );
 }
