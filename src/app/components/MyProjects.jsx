@@ -124,7 +124,7 @@ const MyProjects = ({ projects }) => {
                 >
                   <FaCircleChevronLeft
                     size={30}
-                    className=' shadow-lg shadow-black text-white rounded-full'
+                    className='transition hover:scale-110 shadow-lg shadow-black text-white rounded-full'
                   />
                 </button>
                 <button
@@ -133,7 +133,7 @@ const MyProjects = ({ projects }) => {
                 >
                   <FaCircleChevronRight
                     size={30}
-                    className=' shadow-lg shadow-black text-white rounded-full'
+                    className='transition hover:scale-110 shadow-lg shadow-black text-white rounded-full'
                   />
                 </button>
               </div>

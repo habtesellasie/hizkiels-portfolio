@@ -8,6 +8,7 @@ import { FaPhone } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 import React, { useRef, useEffect } from 'react';
 import MyProjects from './components/MyProjects';
+import Head from 'next/head';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -113,17 +114,18 @@ export default function Home() {
               >
                 I&apos;m Hizkiel
               </motion.h2>
-              <p className='text-xl md:text-2xl lg:text-4xl'></p>
-              <p className='max-w-[42rem] mx-auto text-muted-foreground sm:text-xl md:text-2xl md:max-w-[50rem] inline-block py-4 text-balance text-center'>
-                A talented architect with expertise in rendering, drafting, and
-                3D design. I specialize in bringing architectural visions to
-                life with precision and creativity. My goal is to transform
-                complex concepts into stunning, functional spaces that inspire
-                and captivate.
-                <span className='block mt-4'>
-                  Let&apos;s build something extraordinary together.
-                </span>
-              </p>
+              <div className='max-sm:mx-2'>
+                <p className='max-w-[42rem] mx-auto text-muted-foreground sm:text-xl md:text-2xl md:max-w-[50rem] inline-block py-4 text-balance text-center'>
+                  A talented architect with expertise in rendering, drafting,
+                  and 3D design. I specialize in bringing architectural visions
+                  to life with precision and creativity. My goal is to transform
+                  complex concepts into stunning, functional spaces that inspire
+                  and captivate.
+                  <span className='block mt-4'>
+                    Let&apos;s build something extraordinary together.
+                  </span>
+                </p>
+              </div>
               <div className='flex justify-center mt-4 items-center gap-4'>
                 <Link
                   target='_blank'
