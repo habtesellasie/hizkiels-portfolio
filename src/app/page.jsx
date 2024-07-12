@@ -7,6 +7,7 @@ import { MdEmail } from 'react-icons/md';
 import { FaPhone } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 import React, { useRef, useEffect } from 'react';
+import MyProjects from './components/MyProjects';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -50,27 +51,6 @@ const linkChildVariants = {
   },
 };
 
-const toolsContainerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const toolsChildVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.5,
-    },
-  },
-};
-
 const LinkIcons = {
   phone_number: FaPhone,
   email: MdEmail,
@@ -90,28 +70,28 @@ export default function Home() {
           <nav className='fixed top-2 right-1/2 translate-x-1/2 z-50'>
             <ul className='flex gap-2 border-2 border-gray-600/80 dark:border-gray-500 px-4 py-3 rounded-full bg-black/40 backdrop-blur-md'>
               <li>
-                <a
+                <Link
                   href='#my-projects'
-                  className='px-4 py-2 rounded-full bg-gray-300/20 text-white hover:bg-gray-300/30 hover:text-black dark:hover:text-white hover:ring-2 ring-white dark:ring-gray-300/70 transition '
+                  className='px-4 py-2 rounded-full bg-gray-300/20 text-white hover:bg-gray-300/30 hover:text-black dark:hover:text-white hover:ring-2 ring-white dark:ring-gray-300/70 transition text-nowrap'
                 >
                   My Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href='#certifications'
-                  className='px-4 py-2 rounded-full bg-gray-300/20 text-white hover:bg-gray-300/30 hover:text-black dark:hover:text-white hover:ring-2 ring-white dark:ring-gray-300/70 transition '
+                  className='px-4 py-2 rounded-full bg-gray-300/20 text-white hover:bg-gray-300/30 hover:text-black dark:hover:text-white hover:ring-2 ring-white dark:ring-gray-300/70 transition text-nowrap'
                 >
                   Certifications
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href='#contact-me'
-                  className='px-4 py-2 rounded-full bg-gray-300/20 text-white hover:bg-gray-300/30 hover:text-black dark:hover:text-white hover:ring-2 ring-white dark:ring-gray-300/70 transition '
+                  className='px-4 py-2 rounded-full bg-gray-300/20 text-white hover:bg-gray-300/30 hover:text-black dark:hover:text-white hover:ring-2 ring-white dark:ring-gray-300/70 transition text-nowrap'
                 >
                   Contact Me
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -170,83 +150,19 @@ export default function Home() {
             priority
             /> */}
           </div>
+          <div className='flex items-center mt-6'>
+            <Link
+              target='_blank'
+              href='/my_resume.pdf'
+              className='transition border-2 rounded-full bg-gray-100 dark:bg-white/25 border-gray-200 dark:border-gray-400 hover:bg-gray-200 dark:hover:bg-gray-400 py-2 px-4 inline-block mx-auto'
+            >
+              My Resume
+            </Link>
+          </div>
         </motion.div>
       </header>
       <main className='mx-4'>
-        <section>
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className='text-2xl mt-4 mb-10 sm:text-3xl font-black text-center'
-            id='my-projects'
-          >
-            My Projects
-          </motion.h2>
-
-          <div className='space-y-10'>
-            {projects.map((project, projectIndex) => {
-              return (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ ease: 'easeInOut', delay: 0.2 }}
-                  key={projectIndex}
-                  className='flex max-lg:flex-col items-center lg:even:flex-row-reverse gap-4 group justify-center'
-                >
-                  <div className='flex flex-col justify-center gap-2'>
-                    <div className='flex flex-col justify-center w-full max-w-[600px] gap-4'>
-                      <h3 className='text-xl font-bold md:text-2xl capitalize'>
-                        {project.title}
-                      </h3>
-                      <p className='md:text-lg lg:text-xl text-md text-pretty'>
-                        {project.description}
-                      </p>
-                    </div>
-                    <motion.div
-                      variants={toolsContainerVariants}
-                      initial='hidden'
-                      whileInView='visible'
-                      viewport={{ once: true }}
-                      className='flex gap-2 flex-wrap mt-2'
-                    >
-                      {project.tools.map((tool, i) => {
-                        return (
-                          <motion.span
-                            variants={toolsChildVariants}
-                            key={i}
-                            className='px-4 py-1 bg-gray-200 dark:bg-gray-400 dark:text-black rounded-full text-sm capitalize hover:scale-105 transition cursor-pointer'
-                          >
-                            {tool}
-                          </motion.span>
-                        );
-                      })}
-                    </motion.div>
-                    {/* <Link
-                      href={project.youtube_link}
-                      target='_blank'
-                      className='text-blue-500 inline-flex items-center gap-2 mt-4 hover:underline transition'
-                    >
-                      Visit link
-                      <FaArrowRightLong />
-                    </Link> */}
-                  </div>
-
-                  <div className='w-full max-w-[600px] relative'>
-                    <Image
-                      width={300}
-                      height={500}
-                      className='w-full h-full rounded-lg object-cover'
-                      src={project.image}
-                      alt={project.title}
-                    />
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </section>
+        <MyProjects projects={projects} />
 
         <section className='my-10'>
           <motion.h2
