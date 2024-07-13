@@ -27,10 +27,7 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel='icon' href='/hero-image.jpeg' type='image/jpeg' />
       </Head>
-      <body className={karla.className}>
-        {/* <ThemeSwitcher /> */}
-        {children}
-      </body>
+      <body className={karla.className}>{children}</body>
     </html>
   );
 }
