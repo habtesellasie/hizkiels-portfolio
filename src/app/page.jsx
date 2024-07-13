@@ -61,7 +61,7 @@ const LinkIcons = {
 export default function Home() {
   return (
     <>
-      <header className='my-40'>
+      <header className='my-24'>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
